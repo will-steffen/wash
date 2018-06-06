@@ -1,6 +1,6 @@
 <?php
-
-class GeneralTest extends PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase as TestCase;
+class GeneralTest extends TestCase
 {
     /**
      * @var PDO
