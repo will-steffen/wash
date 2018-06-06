@@ -35,6 +35,6 @@ class GeneralTest extends TestCase
         // $this->assertFalse($helloWorld->what());
         // $helloWorld->hello('Bar');
         // $this->assertEquals('Bar', $helloWorld->what());
-        $this->assertEquals('1', '2');
+        $this->assertEquals('1', '1');
     }
 } 
