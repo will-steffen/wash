@@ -1,6 +1,6 @@
 <?php
-
-class GeneralTest //extends PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase as TestCase;
+class GeneralTest extends TestCase
 {
     /**
      * @var PDO
@@ -21,13 +21,13 @@ class GeneralTest //extends PHPUnit_Framework_TestCase
     {
         // $helloWorld = new HelloWorld($this->pdo);
         // $this->assertEquals('Hello World', $helloWorld->hello());
-        //$this->assertEquals('1', '1');
+        $this->assertEquals('1', '1');
     }
     public function testHello()
     {
         // $helloWorld = new HelloWorld($this->pdo);
         // $this->assertEquals('Hello Bar', $helloWorld->hello('Bar'));
-        //$this->assertEquals('1', '1');
+        $this->assertEquals('1', '1');
     }
     public function testWhat()
     {
@@ -35,6 +35,6 @@ class GeneralTest //extends PHPUnit_Framework_TestCase
         // $this->assertFalse($helloWorld->what());
         // $helloWorld->hello('Bar');
         // $this->assertEquals('Bar', $helloWorld->what());
-        //$this->assertEquals('1', '2');
+        $this->assertEquals('1', '1');
     }
 } 
