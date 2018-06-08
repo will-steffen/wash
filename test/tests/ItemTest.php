@@ -11,7 +11,7 @@ class ItemTest extends GeneralTest
         
         echo $result; // will it print on travis?
         
-        $expect = "echo from Wash";
+        $expect = "echo from Wash -> expected string";
         $this->assertEquals($result, $expect);
     }
 
