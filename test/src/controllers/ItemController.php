@@ -14,7 +14,7 @@ class ItemController extends WashController
      */
     public function get () 
     {
-        return $this->json("get from ItemController", HTTP::OK);
+        return $this->string("get from ItemController", HTTP::OK);
     }
 
 }

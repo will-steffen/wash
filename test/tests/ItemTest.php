@@ -7,8 +7,8 @@ class ItemTest extends WashTestCase
 
     public function testGet ()
     {
-        $result = json_decode($this->request('GET', 'item/get'));
-        $expect = "echo from Wash";
+        $result = $this->request('GET', 'item/get');
+        $expect = "get from ItemController";
         $this->assertEquals($expect, $result);
     }
 
