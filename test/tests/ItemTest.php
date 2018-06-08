@@ -1,16 +1,13 @@
 <?php
 
-include_once 'GeneralTest.php';
+include_once 'WashTestCase.php';
 
-class ItemTest extends GeneralTest
+class ItemTest extends WashTestCase
 {
 
     public function testGet ()
     {
         $result = json_decode($this->request('GET', 'item/get'));
-        
-        echo $result; // will it print on travis?
-        
         $expect = "echo from Wash";
         $this->assertEquals($expect, $result);
     }

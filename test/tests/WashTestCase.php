@@ -1,18 +1,8 @@
 <?php
 use PHPUnit\Framework\TestCase as TestCase;
-class GeneralTest extends TestCase
+class WashTestCase extends TestCase
 {
     private $serverUrl = "http://localhost/";
-
-    public function setUp ()
-    {
-
-    }
-
-    public function tearDown ()
-    {
-        
-    }
 
     public function request ($method, $url, $data = false)
     {
