@@ -16,7 +16,8 @@ before_script:
   - ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
   # configure apache virtual hosts
   - sudo cp -f test/travis-ci-apache /etc/apache2/sites-available/000-default.conf
-  - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/000-default.conf
+  - pwd
+  - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)/test?g" --in-place /etc/apache2/sites-available/000-default.conf
   - sudo service apache2 restart
   - curl http://localhost
 
