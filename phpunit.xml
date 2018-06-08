@@ -5,6 +5,7 @@
     <testsuites>
         <testsuite name="General Test Suite">
             <directory>./test/tests</directory>
+            <exclude>./tests/tests/WashTestCase.php</exclude>
         </testsuite>
     </testsuites>
 

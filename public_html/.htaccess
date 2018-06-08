@@ -1,5 +1,6 @@
 RewriteEngine On
 RewriteRule ^ index.php
 
-#RewriteCond %{HTTPS} off
-#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+# Uncomment those lines to force HTTPS request
+# RewriteCond %{HTTPS} off
+# RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}

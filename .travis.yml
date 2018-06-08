@@ -17,6 +17,7 @@ before_script:
   # configure apache virtual hosts
   - sudo cp -f test/travis-ci-apache /etc/apache2/sites-available/000-default.conf
   - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)/test?g" --in-place /etc/apache2/sites-available/000-default.conf
+  - sudo cp -r public_html/wash/ test/
   - sudo service apache2 restart
 
 script: phpunit --configuration phpunit.xml --coverage-text
