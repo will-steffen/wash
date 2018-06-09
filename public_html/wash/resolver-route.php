@@ -13,13 +13,11 @@ class ResolverRoute
     public function searchRoute ()
     {
         $type = strtolower($_SERVER['REQUEST_METHOD']);
-        $url = $_SERVER['REDIRECT_URL'];
+        $url = $_SERVER['REQUEST_URI'];
         $url = substr($url, -1) == '/' ? substr($url, 0, count($url)-2) : $url;
-        $params = $_SERVER['QUERY_STRING'];
-        
-        $controllers = scandir($this->controllersDir);
-        echo '\n'.json_encode($url);
-        echo '\n'.json_encode($_SERVER);
+        $params = $_SERVER['QUERY_STRING']; 
+        $controllers = scandir($this->controllersDir); 
+
         for($i = 0; $i < count($controllers); $i++)
         {
             $c = $controllers[$i];
@@ -30,8 +28,7 @@ class ResolverRoute
                 $class = str_replace('.php', '', $c);
                 $reflected = new \ReflectionClass($class);  
                 $params = Wash::GetAnnotationParams($reflected->getDocComment());
-                echo '\n Params';
-                echo '\n'.json_encode($_SERVER);
+
                 for($j = 0; $j < count($params); $j++)
                 {                  
                     if(isset($params[Param::Route]) && strpos($url, strtolower('/'.$params[Param::Route])) === 0)
