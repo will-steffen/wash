@@ -17,7 +17,8 @@ class WashController extends Controller
      */
     public function get () 
     {
-        return $this->string("WashController", HTTP::OK);
+        return $this->string("SimpleController error GET", HTTP::ERROR);
+        // return $this->string("WashController", HTTP::OK);
     }
 
     /**

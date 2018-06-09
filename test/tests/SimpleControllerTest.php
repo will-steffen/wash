@@ -1,6 +1,7 @@
 <?php
 
 include_once 'WashTestCase.php';
+use wash\HTTP as HTTP;
 
 class SimpleControllerTest extends WashTestCase
 {
@@ -19,11 +20,9 @@ class SimpleControllerTest extends WashTestCase
 
     public function testError500Get ()
     {
-        $result = $this->requestString('GET', 'simple/error');        
-        $expectString = "SimpleController error GET";
-        $expectCode = "SimpleController error GET";
-        $this->assertEquals($expectString, $result['output']);
-        $this->assertEquals($expectCode, $result['code']);
+        $result = $this->requestString('GET', 'simple/error')['code'];
+        $expect = HTTP::ERROR;
+        $this->assertEquals($expectCode, $result);
     }
 
 }
