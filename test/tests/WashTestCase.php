@@ -50,7 +50,7 @@ class WashTestCase extends TestCase
     public function requestJson ($method, $url, $data = false)
     {
         $result = $this->requestString($method, $url, $data);
-        $result['output'] = json_encode($result['output']);
+        $result['output'] = json_decode($result['output']);
         return $result;
     }
 
