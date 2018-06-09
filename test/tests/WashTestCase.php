@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase as TestCase;
-require '/wash/enums.php';
+require __DIR__ . '/wash/enums.php';
 
 class WashTestCase extends TestCase
 {
