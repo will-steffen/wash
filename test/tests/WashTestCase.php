@@ -31,7 +31,6 @@ class WashTestCase extends TestCase
                 if ($data)
                     $url = sprintf("%s?%s", $url, http_build_query($data));
         }
-        $url = str_replace(' ', '%20', $url);
     
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);

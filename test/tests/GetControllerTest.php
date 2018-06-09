@@ -42,7 +42,7 @@ class GetControllerTest extends WashTestCase
 
     public function testParam ()
     {
-        $param = 'Parameter passed';
+        $param = 'Parameter';
         $result = $this->requestString('GET', "$this->route/param/$param")['output'];        
         $expect = "param GET $param";
         $this->assertEquals($expect, $result);
@@ -51,9 +51,9 @@ class GetControllerTest extends WashTestCase
     public function testParams ()
     {
         $param1 = "123456789";
-        $param2 = "asdfghjklç";
+        $param2 = "asdfghjkl";
         // can't use [#, &, /] 
-        $param3 = "@fwerãÃn~nñÑ!$%Ç"; 
+        $param3 = "23452345rgbrtyb"; 
 
         $r = "$this->route/params/$param1/$param2/$param3/";
         $result = $this->requestString('GET', $r)['output'];        
@@ -64,7 +64,7 @@ class GetControllerTest extends WashTestCase
     public function testParamsJson ()
     {
         $param1 = "QAZWSXEDCRFVTGBYHNUJMIKLOPÇ";
-        $param2 = "qazw sx edcrfv tgbyh nuj mik,ol.pç-0";
+        $param2 = "qazwsxdcrfvtgbyhnujmikolp0";
 
         $r = "$this->route/params-json/$param1/$param2";
         $result = $this->requestJson('GET', $r)['output'];        
