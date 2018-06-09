@@ -52,7 +52,8 @@ class GetControllerTest extends WashTestCase
     {
         $param1 = "123456789";
         $param2 = "asdfghjklç";
-        $param3 = "@fwerãÃn~nñÑ!#$%Ç";
+        // can't use [#, &, /] 
+        $param3 = "@fwerãÃn~nñÑ!$%Ç"; 
 
         $r = "$this->route/params/$param1/$param2/$param3/";
         $result = $this->requestString('GET', $r)['output'];        

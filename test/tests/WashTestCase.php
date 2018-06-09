@@ -31,6 +31,7 @@ class WashTestCase extends TestCase
                 if ($data)
                     $url = sprintf("%s?%s", $url, http_build_query($data));
         }
+        $url = str_replace(' ', '%20', $url);
     
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -50,7 +51,7 @@ class WashTestCase extends TestCase
     public function requestJson ($method, $url, $data = false)
     {
         $result = $this->requestString($method, $url, $data);
-        $result['output'] = json_encode($result['output']);
+        $result['output'] = json_decode($result['output']);
         return $result;
     }
 
