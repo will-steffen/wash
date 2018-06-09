@@ -20,9 +20,11 @@ class SimpleControllerTest extends WashTestCase
 
     public function testError500Get ()
     {
-        $result = $this->requestString('GET', 'simple/error')['code'];
-        $expect = HTTP::ERROR;
-        $this->assertEquals($expectCode, $result);
+        $result = $this->requestString('GET', 'simple/error');        
+        $expectString = "SimpleController error GET";
+        $expectCode = HTTP::ERROR;
+        $this->assertEquals($expectString, $result['output']);
+        $this->assertEquals($expectCode, $result['code']);
     }
 
 }
