@@ -1,5 +1,4 @@
 <?php
-
 // [W]eb [A]pi for [S]hared [H]osting
 require $_SERVER['DOCUMENT_ROOT'] . '/wash/loader.php';
 use wash\Wash as Wash;

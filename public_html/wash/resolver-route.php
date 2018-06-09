@@ -18,7 +18,7 @@ class ResolverRoute
         $params = $_SERVER['QUERY_STRING'];
         
         $controllers = scandir($this->controllersDir); 
-
+        echo json_encode($controllers);
         for($i = 0; $i < count($controllers); $i++)
         {
             $c = $controllers[$i];

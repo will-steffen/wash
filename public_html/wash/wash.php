@@ -12,7 +12,7 @@ class Wash extends WashBase
         $this->resolverDependency = new ResolverDependency();           
 
         $route = $this->resolverRoute->searchRoute(); 
-
+        echo json_encode($route);
         if($route == null) 
         {
             return (new Controller())->json('Not Found', HTTP::NOT_FOUND);
