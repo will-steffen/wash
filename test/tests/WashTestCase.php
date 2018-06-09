@@ -1,13 +1,17 @@
 <?php
+
 use PHPUnit\Framework\TestCase as TestCase;
+$basePath = str_replace('tests', '', __DIR__);
+require $basePath . 'wash/enums.php';
+
 class WashTestCase extends TestCase
 {
     private $serverUrl = "http://localhost/";
 
-    public function request ($method, $url, $data = false)
+    public function requestString ($method, $url, $data = false)
     {
         $method = strtoupper($method);
-        $url = $this->serverUrl . $url;
+        $url = $this->serverUrl . $url;        
 
         // from: https://stackoverflow.com/questions/9802788/call-a-rest-api-in-php
         $curl = curl_init();
@@ -28,20 +32,26 @@ class WashTestCase extends TestCase
                     $url = sprintf("%s?%s", $url, http_build_query($data));
         }
     
-        // Optional Authentication:
-        // curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        // curl_setopt($curl, CURLOPT_USERPWD, "username:password");
-    
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-    
-        $result = curl_exec($curl);
+           
+        $output = curl_exec($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
     
         curl_close($curl);
     
-        return $result;
+        return array(
+            "output" => $output,
+            "code" => $httpcode
+        );
+
     }
 
- 
+    public function requestJson ($method, $url, $data = false)
+    {
+        $result = $this->requestString($method, $url, $data);
+        $result['output'] = json_encode($result['output']);
+        return $result;
+    }
 
 } 
