@@ -10,30 +10,30 @@ class GetControllerTest extends WashTestCase
     public function testDefaultGet ()
     {
         // with end bar
-        $result = $this->requestString('GET', $route)['output'];
+        $result = $this->requestString('GET', $this->route)['output'];
         $expect = "default GET";
         $this->assertEquals($expect, $result);
 
         // with no end bar
-        $result = $this->requestString('GET', "$route/")['output'];
+        $result = $this->requestString('GET', "$this->route/")['output'];
         $this->assertEquals($expect, $result);
     }
 
     public function testDefinedGet ()
     {
         // with end bar
-        $result = $this->requestString('GET', "$route/defined")['output'];
+        $result = $this->requestString('GET', "$this->route/defined")['output'];
         $expect = "defined GET";
         $this->assertEquals($expect, $result);
 
         // with no end bar
-        $result = $this->requestString('GET', "$route/defined/")['output'];
+        $result = $this->requestString('GET', "$this->route/defined/")['output'];
         $this->assertEquals($expect, $result);
     }
 
     public function testError ()
     {
-        $result = $this->requestString('GET', "$route/error");        
+        $result = $this->requestString('GET', "$this->route/error");        
         $expectString = "error GET";
         $expectCode = HTTP::ERROR;
         $this->assertEquals($expectString, $result['output']);
@@ -43,7 +43,7 @@ class GetControllerTest extends WashTestCase
     public function testParam ()
     {
         $param = 'Parameter passed';
-        $result = $this->requestString('GET', "$route/param/$param")['output'];        
+        $result = $this->requestString('GET', "$this->route/param/$param")['output'];        
         $expect = "param GET $param";
         $this->assertEquals($expect, $result);
     }
@@ -54,7 +54,7 @@ class GetControllerTest extends WashTestCase
         $param2 = "asdfghjklç";
         $param3 = "@fwerãÃn~nñÑ!#$%Ç";
 
-        $r = "$route/params/$param1/$param2/$param3/";
+        $r = "$this->route/params/$param1/$param2/$param3/";
         $result = $this->requestString('GET', $r)['output'];        
         $expect = "params GET $param1, $param2, $param3";
         $this->assertEquals($expect, $result);
@@ -65,7 +65,7 @@ class GetControllerTest extends WashTestCase
         $param1 = "QAZWSXEDCRFVTGBYHNUJMIKLOPÇ";
         $param2 = "qazw sx edcrfv tgbyh nuj mik,ol.pç-0";
 
-        $r = "$route/params-json/$param1/$param2";
+        $r = "$this->route/params-json/$param1/$param2";
         $result = $this->requestJson('GET', $r)['output'];        
         $expect = "params Json GET";
 
