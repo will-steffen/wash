@@ -9,6 +9,10 @@ class WashTestCase extends TestCase
         $method = strtoupper($method);
         $url = $this->serverUrl . $url;
 
+
+        echo "[$method] $url";
+        
+
         // from: https://stackoverflow.com/questions/9802788/call-a-rest-api-in-php
         $curl = curl_init();
 
