@@ -19,6 +19,5 @@ before_script:
   - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)/test?g" --in-place /etc/apache2/sites-available/000-default.conf
   - sudo cp -r public_html/wash/ test/
   - sudo service apache2 restart
-  - curl http://localhost/item/get
 
 script: phpunit --configuration phpunit.xml --coverage-text
