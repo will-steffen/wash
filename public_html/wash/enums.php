@@ -3,9 +3,10 @@
 class HTTP 
 {
     const OK = 200;
-    const ERROR = 500;
-    const NOT_FOUND = 404;
+    const UNAUTHORIZED = 401;
     const FORBIDDEN = 403;
+    const NOT_FOUND = 404;
+    const ERROR = 500;
 }
 
 class Param 
