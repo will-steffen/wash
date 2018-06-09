@@ -71,8 +71,8 @@ class GetControllerTest extends WashTestCase
         $expect = "params Json GET";
 
         $this->assertEquals($expect, $result->message);
-        $this->assertEquals($expect, $result->param1);
-        $this->assertEquals($expect, $result->param2);
+        $this->assertEquals($param1, $result->param1);
+        $this->assertEquals($param2, $result->param2);
     }  
 
 }
