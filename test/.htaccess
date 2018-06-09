@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule ^ local-test.php
+RewriteRule ^ index.php
