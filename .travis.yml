@@ -19,5 +19,13 @@ before_script:
   - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)/test?g" --in-place /etc/apache2/sites-available/000-default.conf
   - sudo cp -r public_html/wash/ test/
   - sudo service apache2 restart
+  - nvm install 8.11.2
+  - nvm use 8.11.2
+  - cd ./test/tests
+  - npm install
 
-script: phpunit --configuration phpunit.xml --coverage-text
+#tests-php
+#script: phpunit --configuration phpunit.xml --coverage-text
+
+#tests
+script: npm run test

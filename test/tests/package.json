@@ -1,0 +1,14 @@
+{
+  "name": "wash-client-spec",
+  "version": "1.0.0",
+  "description": "node client to consume and test wash",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node spec"
+  },
+  "author": "will-steffen",
+  "license": "MIT",
+  "dependencies": {
+    "jasmine-node": "^1.14.5",
+    "request": "^2.87.0"
+  }
+}
