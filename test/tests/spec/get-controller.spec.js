@@ -1,5 +1,5 @@
 var request = require("request");
-let custom = require('../wash-test');
+var custom = require('../wash-test');
 
 var base_url = "http://localhost/"
 
