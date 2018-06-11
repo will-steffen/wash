@@ -4,8 +4,8 @@
 
     <testsuites>
         <testsuite name="General Test Suite">
-            <directory>./test/tests</directory>
-            <exclude>./tests/tests/WashTestCase.php</exclude>
+            <directory>./test/tests-php</directory>
+            <exclude>./test/tests-php/WashTestCase.php</exclude>
         </testsuite>
     </testsuites>
 
@@ -13,7 +13,7 @@
         <whitelist>
             <directory>./</directory>
             <exclude>
-                <directory>./test/tests</directory>
+                <directory>./test/tests-php</directory>
             </exclude>
         </whitelist>
     </filter>

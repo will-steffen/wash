@@ -47,7 +47,7 @@ function Request(method, route, data) {
 }
 
 
-exports.Method = Method;
 exports.Resp = Resp;
-exports.Request = Request;
-exports.Code = Code;
+exports.method = Method;
+exports.request = Request;
+exports.code = Code;
