@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="tests-php/bootstrap.php" colors="true">
+
+    <testsuites>
+        <testsuite name="PHP Client Test Suite">
+            <directory>./tests-php</directory>
+            <exclude>./tests-php/WashTestCase.php</exclude>
+            <exclude>./tests-php/bootstrap.php</exclude>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory>./</directory>
+            <exclude>
+                <directory>./tests-php</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
