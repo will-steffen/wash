@@ -15,7 +15,7 @@ class Wash extends WashBase
         
         if($route == null) 
         {
-            return (new Controller())->json('Not Found', HTTP::NOT_FOUND);
+            return (new Controller())->string('Not Found', HTTP::NOT_FOUND);
         }
         
         $this->execRoute($route);
@@ -28,7 +28,7 @@ class Wash extends WashBase
 
         if($args === false) 
         {
-            return (new Controller())->json('ERROR', HTTP::ERROR);
+            return (new Controller())->string('ERROR', HTTP::ERROR);
         }
 
         $methodCommentsParams = $commentsParam = Wash::GetAnnotationParams($route->method->getDocComment());

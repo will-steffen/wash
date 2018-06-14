@@ -17,6 +17,7 @@ class Controller extends WashClass
 
     public function string (string $obj, int $code)
     {  
+        header('Content-Type: charset=UTF-8');
         http_response_code($code);
         echo $obj;
     }

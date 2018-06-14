@@ -77,7 +77,7 @@ class ResolverRoute
 
     }
 
-    public function getRequestArgs (RouteDef $route) : array
+    public function getRequestArgs (RouteDef $route)
     {
         $params = $route->method->getParameters();
         $args = array();

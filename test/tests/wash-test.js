@@ -31,6 +31,7 @@ function Request(method, route, data) {
                 'Content-Type': 'application/json',
             }
         }, function(response){
+            response.setEncoding('utf8');
             var body = '';
             response.on('data', function(d) {
                 body += d;
@@ -40,7 +41,7 @@ function Request(method, route, data) {
             });
         });
         if(data){
-            request.write(JSON.stringify(data));
+            request.write(data);
         }
         request.end();
     });    
